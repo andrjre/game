@@ -1,0 +1,17 @@
+body{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#player{
+    width:100px;
+    height:100px;
+    border:2px solid black
+}
+.pickedUp{
+    background-color: green;
+}
+.putDown{
+    background-color: red;
+}
