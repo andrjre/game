@@ -1,19 +1,23 @@
-let player = document.querySelector("#player")
-let pickup = 1
-let pickedUp = document.querySelector(".pickedUp")
-let putDown = document.querySelector(".putDown")
+let player = document.querySelector("#player");
 
-player.onclick = function(){
-    pickup = pickup + 1
-    console.log(pickup)
-    if(pickup % 2 == 0){
-        player.classList.add("pickedUp")
-        player.classList.remove("putDown")
-        console.log("pickup")
+document.addEventListener("keydown", (event) => {
+    const step = 50;
+    const currentLeft = parseInt(window.getComputedStyle(player).left);
+    const currentTop = parseInt(window.getComputedStyle(player).top);
+
+    switch (event.key) {
+        case "w":
+            player.style.top = currentTop - step + "px";
+            break;
+        case "s":
+            player.style.top = currentTop + step + "px";
+            break;
+        case "a":
+            player.style.left = currentLeft - step + "px";
+            break;
+        case "d":
+            player.style.left = currentLeft + step + "px";
+            break;
     }
-    else{
-        player.classList.add("putDown")
-        player.classList.remove("pickedUp")
-        console.log("putdown")
-    }
-}
+});
+
