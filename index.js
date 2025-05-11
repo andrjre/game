@@ -30,8 +30,9 @@ document.addEventListener("keydown", playerMovement = function() {
     }
 
    apple.style.left = "500px";
+   apple.style.top = "100px";
 
- if(apple.style.left == player.style.left){
+ if(apple.style.left == player.style.left && apple.style.top == player.style.top ){
         let eatApple = function(){
             apple.style.backgroundColor = "white"
         }
