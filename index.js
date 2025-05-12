@@ -8,13 +8,13 @@ player.style.top = "50px"
 let appleY = getComputedStyle(apple).top;
 let appleX = getComputedStyle(apple).left;
 
-let pearY =getComputedStyle(pear).top
-let pearX =getComputedStyle(pear).left
+let pearY = getComputedStyle(pear).top
+let pearX = getComputedStyle(pear).left
 
-console.log(` apple is at y: ${appleY} + x: ${appleX}`)
-console.log(` pear is at y: ${pearY} + x: ${pearX}`)
+console.log(`apple is at y: ${appleY} + x: ${appleX}`)
+console.log(`pear is at y: ${pearY} + x: ${pearX}`)
 
-console.log(`y: ${player.style.top} x: ${player.style.left}`)
+console.log(`you are at y: ${player.style.top} x: ${player.style.left}`)
 
 document.addEventListener("keydown", playerMovement = function() {
 
@@ -60,6 +60,7 @@ if(pearX == player.style.left  && pearY == player.style.top ){
 
 );
 
-
+// game loop: make counter for amount of keystrokes to collect all fruits, maybe timer too
+// aim for lowest amount of keystrokes to get all fruits
 
 
