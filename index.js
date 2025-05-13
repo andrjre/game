@@ -2,6 +2,7 @@ let player = document.querySelector("#player");
 let apple = document.querySelector("#apple")
 let pear = document.querySelector("#pear")
 let countText = document.querySelector("#countText")
+let keystrokeCountText = document.querySelector("#keystrokeCountText")
 player.style.left = "50px"
 player.style.top = "100px"
 
@@ -19,13 +20,15 @@ console.log(`pear is at y: ${pearY} + x: ${pearX}`)
 
 console.log(`you are at y: ${player.style.top} x: ${player.style.left}`)
 
+//player movement 
+
 document.addEventListener("keydown", playerMovement = function() {
 
     const step = 50;
     const currentLeft = parseInt(window.getComputedStyle(player).left);
     const currentTop = parseInt(window.getComputedStyle(player).top);
 
-//player movement 
+
     
     switch (event.key) {
         case "w":
@@ -34,6 +37,7 @@ document.addEventListener("keydown", playerMovement = function() {
             }
             player.style.top = currentTop - step + "px";
             console.log(`y: ${player.style.top} x: ${player.style.left}`)
+            keystrokeCount++
             break;
         case "s":
             if(currentTop == 400){
@@ -41,6 +45,7 @@ document.addEventListener("keydown", playerMovement = function() {
             }
             player.style.top = currentTop + step + "px";
             console.log(`y: ${player.style.top} x: ${player.style.left}`)
+            keystrokeCount++
             break;
         case "a":
             if(currentLeft == 0){
@@ -48,6 +53,7 @@ document.addEventListener("keydown", playerMovement = function() {
             }
             player.style.left = currentLeft - step + "px";
             console.log(`y: ${player.style.top} x: ${player.style.left}`)
+            keystrokeCount++
             break;
         case "d":
             if(currentLeft == 450){
@@ -55,10 +61,13 @@ document.addEventListener("keydown", playerMovement = function() {
             }
             player.style.left = currentLeft + step + "px";
             console.log(`y: ${player.style.top} x: ${player.style.left}`)
+            keystrokeCount++
             break;
     }
 
+    keystrokeCountText.textContent = `Keystroke Count: ${keystrokeCount}`
 //apple collision 
+
 let eat = function(fruit){
 fruit.style.backgroundColor = "white"
 console.log(`ate ${fruit.id}`)
