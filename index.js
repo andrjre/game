@@ -1,9 +1,11 @@
 let player = document.querySelector("#player");
 let apple = document.querySelector("#apple")
 let pear = document.querySelector("#pear")
-
+let countText = document.querySelector("#countText")
 player.style.left = "50px"
-player.style.top = "50px"
+player.style.top = "100px"
+
+let count = 0
 
 let appleY = getComputedStyle(apple).top;
 let appleX = getComputedStyle(apple).left;
@@ -44,17 +46,24 @@ document.addEventListener("keydown", playerMovement = function() {
     }
 
 //apple collision 
-
 let eat = function(fruit){
 fruit.style.backgroundColor = "white"
 console.log(`ate ${fruit.id}`)
+count ++
+countText.textContent = `Fruit Count: ${count}`
 }
 
 if(appleX == player.style.left  && appleY == player.style.top ){
         eat(apple)
     }
+    else{
+apple.style.backgroundColor = "red"
+    }
 if(pearX == player.style.left  && pearY == player.style.top ){
         eat(pear)
+    }
+    else{
+pear.style.backgroundColor = "limegreen"
     }
 }
 
