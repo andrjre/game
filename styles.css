@@ -1,13 +1,16 @@
 body{
     height:100vh;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #player{
     width:50px;
     height:100px;
     border:2px solid black;
-    position: absolute;
+    position: relative;
     left:50px;
     top:100px;
     display: flex;
@@ -28,7 +31,7 @@ body{
 
 #apple{
     position:absolute;
-    left:500px;
+    left:300px;
     top:100px;
     border: 2px solid red;
     background-color: red;
@@ -40,4 +43,16 @@ body{
     top:400px;
     border: 2px solid limegreen;
     background-color: limegreen;
+}
+
+#ui{
+    display: flex;
+    flex-direction: column;
+}
+
+#gameCanvas{
+    border: 2px solid black;
+    width:500px;
+    height:500px;
+    position:relative;
 }

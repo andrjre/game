@@ -6,6 +6,7 @@ player.style.left = "50px"
 player.style.top = "100px"
 
 let count = 0
+let keystrokeCount = 0
 
 let appleY = getComputedStyle(apple).top;
 let appleX = getComputedStyle(apple).left;
@@ -28,18 +29,30 @@ document.addEventListener("keydown", playerMovement = function() {
     
     switch (event.key) {
         case "w":
+            if(currentTop == 0 ){
+                break
+            }
             player.style.top = currentTop - step + "px";
             console.log(`y: ${player.style.top} x: ${player.style.left}`)
             break;
         case "s":
+            if(currentTop == 400){
+                break
+            }
             player.style.top = currentTop + step + "px";
             console.log(`y: ${player.style.top} x: ${player.style.left}`)
             break;
         case "a":
+            if(currentLeft == 0){
+                break
+            }
             player.style.left = currentLeft - step + "px";
             console.log(`y: ${player.style.top} x: ${player.style.left}`)
             break;
         case "d":
+            if(currentLeft == 450){
+                break
+            }
             player.style.left = currentLeft + step + "px";
             console.log(`y: ${player.style.top} x: ${player.style.left}`)
             break;
