@@ -6,6 +6,7 @@ let keystrokeCountText = document.querySelector("#keystrokeCountText")
 player.style.left = "50px"
 player.style.top = "100px"
 
+
 let count = 0
 let keystrokeCount = 0
 
@@ -66,14 +67,27 @@ document.addEventListener("keydown", playerMovement = function() {
     }
 
     keystrokeCountText.textContent = `Keystroke Count: ${keystrokeCount}`
-//apple collision 
+
+//fruit collision 
+
+
+
 
 let eat = function(fruit){
 fruit.style.backgroundColor = "white"
 console.log(`ate ${fruit.id}`)
+fruit.id = ""
 count ++
 countText.textContent = `Fruit Count: ${count}`
-fruit.id = ""
+
+let numberFruits = [...document.querySelectorAll(".fruit")]
+
+if(count === numberFruits.length){
+    console.log("got all fruits")
+    setTimeout(function() {
+        alert("got all fruits")}, 100)
+}
+
 }
 
 if(appleX == player.style.left  && appleY == player.style.top ){
@@ -85,6 +99,8 @@ if(pearX == player.style.left  && pearY == player.style.top ){
 }
 
 );
+
+
 
 // game loop: make counter for amount of keystrokes to collect all fruits, maybe timer too
 // aim for lowest amount of keystrokes to get all fruits
