@@ -73,19 +73,14 @@ fruit.style.backgroundColor = "white"
 console.log(`ate ${fruit.id}`)
 count ++
 countText.textContent = `Fruit Count: ${count}`
+fruit.id = ""
 }
 
 if(appleX == player.style.left  && appleY == player.style.top ){
         eat(apple)
     }
-    else{
-apple.style.backgroundColor = "red"
-    }
 if(pearX == player.style.left  && pearY == player.style.top ){
         eat(pear)
-    }
-    else{
-pear.style.backgroundColor = "limegreen"
     }
 }
 
